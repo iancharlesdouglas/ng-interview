@@ -6,7 +6,9 @@
       "files": ["*.ts"],
       "extends": [
         "plugin:@nrwl/nx/angular",
-        "plugin:@angular-eslint/template/process-inline-templates"
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:@angular-eslint/recommended",
+        "airbnb-typescript/base"
       ],
       "rules": {
         "@angular-eslint/directive-selector": [
@@ -24,7 +26,12 @@
             "prefix": "ng-interview",
             "style": "kebab-case"
           }
-        ]
+        ],
+        "import/prefer-default-export": "off",
+        "@typescript-eslint/comma-dangle": "off",
+        "class-methods-use-this": "off",
+        "implicit-arrow-linebreak": "off",
+        "no-alert": "off"
       }
     },
     {

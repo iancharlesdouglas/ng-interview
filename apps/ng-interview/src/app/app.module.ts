@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { TradersComponent } from './traders/traders.component';
+
+const routes: Routes = [{ path: 'traders', component: TradersComponent }];
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule],
+  declarations: [AppComponent, TradersComponent],
+  imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],
   bootstrap: [AppComponent],
 })
