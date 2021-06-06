@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Trader } from '../model/trader';
 
@@ -7,8 +7,20 @@ import { Trader } from '../model/trader';
   templateUrl: './traders.component.html',
   styleUrls: ['./traders.component.css'],
 })
-export class TradersComponent {
-  traders: Observable<Trader[]>;
+export class TradersComponent implements OnInit {
+  traders: Observable<Trader[]> | undefined;
 
   constructor() {}
+
+  ngOnInit(): void {
+    this.traders = new Observable<Trader[]>((observer) => {
+      observer.next(
+        [
+          new Trader('trd001', 'Smith', 'John'),
+          new Trader('trd002', 'Ashley', 'Mary'),
+        ].sort((a, b) => a.familyName.localeCompare(b.familyName))
+      );
+      observer.complete();
+    });
+  }
 }

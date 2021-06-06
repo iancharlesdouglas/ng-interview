@@ -1,4 +1,4 @@
 <h1>Traders</h1>
-<ul>
-  <li>* TRADER NAME HERE *</li>
+<ul *ngFor='let trader of traders | async'>
+  <li>{{trader.fullName()}}</li>
 </ul>
