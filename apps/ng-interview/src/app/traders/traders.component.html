@@ -1,13 +1,13 @@
 <div class='container'>
   <h1>Traders</h1>
-  <table class='table table-striped'>
+  <table class='table'>
     <thead class='table-dark'>
     <tr>
       <th>Trader</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor='let trader of traders | async'>
+    <tr *ngFor='let trader of traders | async; let i = index' [ngClass]='{"bg-light": i % 2 === 1}'>
       <td>{{trader.fullName()}}</td>
     </tr>
     </tbody>
