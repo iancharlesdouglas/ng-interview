@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Trader } from '../model/trader';
+import { TradersService } from '../services/traders.service';
 
 @Component({
   selector: 'ng-interview-traders',
@@ -10,17 +11,9 @@ import { Trader } from '../model/trader';
 export class TradersComponent implements OnInit {
   traders: Observable<Trader[]> | undefined;
 
-  constructor() {}
+  constructor(private service: TradersService) {}
 
   ngOnInit(): void {
-    this.traders = new Observable<Trader[]>((observer) => {
-      observer.next(
-        [
-          new Trader('trd001', 'Smith', 'John', 1000000),
-          new Trader('trd002', 'Ashley', 'Mary'),
-        ].sort((a, b) => a.familyName.localeCompare(b.familyName))
-      );
-      observer.complete();
-    });
+    this.traders = this.service.getTraders();
   }
 }
