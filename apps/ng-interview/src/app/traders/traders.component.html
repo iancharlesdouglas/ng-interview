@@ -1,4 +1,15 @@
-<h1>Traders</h1>
-<ul *ngFor='let trader of traders | async'>
-  <li>{{trader.fullName()}}</li>
-</ul>
+<div class='container'>
+  <h1>Traders</h1>
+  <table class='table table-striped'>
+    <thead class='table-dark'>
+    <tr>
+      <th>Trader</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor='let trader of traders | async'>
+      <td>{{trader.fullName()}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
