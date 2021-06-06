@@ -4,11 +4,13 @@
     <thead class='table-dark'>
     <tr>
       <th>Trader</th>
+      <th>Limit</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor='let trader of traders | async; let i = index' [ngClass]='{"bg-light": i % 2 === 1}'>
       <td>{{trader.fullName()}}</td>
+      <td>{{trader.limit | number:'':'en-US'}}</td>
     </tr>
     </tbody>
   </table>

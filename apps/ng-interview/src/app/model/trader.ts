@@ -5,10 +5,18 @@ export class Trader {
 
   readonly givenNames: string;
 
-  constructor(id: string, familyName: string, givenNames: string) {
+  limit?: number;
+
+  constructor(
+    id: string,
+    familyName: string,
+    givenNames: string,
+    limit?: number
+  ) {
     this.id = id;
     this.familyName = familyName;
     this.givenNames = givenNames;
+    this.limit = limit;
   }
 
   fullName(): string {

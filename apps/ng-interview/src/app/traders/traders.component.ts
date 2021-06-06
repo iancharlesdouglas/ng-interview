@@ -16,7 +16,7 @@ export class TradersComponent implements OnInit {
     this.traders = new Observable<Trader[]>((observer) => {
       observer.next(
         [
-          new Trader('trd001', 'Smith', 'John'),
+          new Trader('trd001', 'Smith', 'John', 1000000),
           new Trader('trd002', 'Ashley', 'Mary'),
         ].sort((a, b) => a.familyName.localeCompare(b.familyName))
       );
