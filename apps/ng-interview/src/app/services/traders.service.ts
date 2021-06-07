@@ -17,4 +17,13 @@ export class TradersService {
       observer.complete();
     });
   }
+
+  getTraderTarget(trader: Trader): number {
+    switch (trader.grade) {
+      case 'C':
+        return 1000000;
+      default:
+        return 0;
+    }
+  }
 }
