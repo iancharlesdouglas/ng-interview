@@ -1,0 +1,21 @@
+<div class='container'>
+  <form #form>
+    <div class='row'>
+      <div class='col-6'>Trader ID</div>
+      <div class='col-6'>{{traderId}}</div>
+    </div>
+    <div class='row mt-2'>
+      <div class='col-6'>
+        Family name:
+      </div>
+      <div class='col-6'>
+        <input type='text' class='form-control' id='family-name' name='family-name' required [(ngModel)]='familyName'>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-12'>
+        <button class='btn btn-primary' (click)='save(form)'>Save</button>
+      </div>
+    </div>
+  </form>
+</div>

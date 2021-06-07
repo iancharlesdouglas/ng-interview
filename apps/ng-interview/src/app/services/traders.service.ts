@@ -26,4 +26,13 @@ export class TradersService {
         return 0;
     }
   }
+
+  async getTrader(id: string): Promise<Trader> {
+    const traders = await this.getTraders().toPromise();
+    const foundTrader = traders.find((trader) => trader.id === id);
+    if (foundTrader) {
+      return foundTrader;
+    }
+    return Promise.reject(new Error(`No trader ${id}`));
+  }
 }

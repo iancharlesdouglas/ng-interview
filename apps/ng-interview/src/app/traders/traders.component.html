@@ -9,7 +9,7 @@
     </thead>
     <tbody>
     <tr *ngFor='let trader of traders | async; let i = index' [ngClass]='{"bg-light": i % 2 === 1}'>
-      <td>{{trader.fullName()}}</td>
+      <td><a [routerLink]="['trader', trader.id]">{{trader.fullName()}}</a></td>
       <td>{{trader.limit | number:'':'en-US'}}</td>
     </tr>
     </tbody>
